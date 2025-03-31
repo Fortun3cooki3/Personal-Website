@@ -1,0 +1,102 @@
+
+/* ------------- content section ------------ */
+
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "who-is picture-slide"
+    "latest-posts latest-posts";
+    justify-content: center;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Center horizontally */
+    justify-content: center;  /* Center vertically */
+    text-align: center;
+    height: 200px; /* Full screen height */
+    margin-bottom: 50px; /* Adds space at the bottom */
+    color: rgb(33, 37, 41);
+  }
+  
+  .who-is {
+    max-width: 600px; /* Prevents text from becoming too wide */
+    padding: 20px;
+  }
+
+/*----------------- latest posts -----------------*/
+
+
+.latest-posts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.blog-pic{
+    aspect-ratio: 1/1;
+    width: 40px;
+}
+
+.post-one,
+.post-two,
+.post-three{
+    border: solid rgb(33, 37, 41);
+    border-radius: 5px;
+    box-shadow: 5px 4px 8px rgb(0, 150, 136);  
+    color :rgb(33,37,41);
+    transition: 0.3s ease;
+    margin-top: 40px;
+    flex: auto;
+    max-width: 300px;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+a{
+    color: rgb(33, 37, 41);
+}
+
+a:focus,
+a:active{
+    color:rgba(230, 0, 0, 0.4);
+}
+
+.post-one{
+    margin-left: 15px;
+}
+.post-three{
+    margin-right: 15px;
+}
+
+.post-box{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0px;
+    padding: 10px;
+}
+
+
+
+.post-one:hover,
+.post-two:hover,
+.post-three:hover{
+    box-shadow: 5px 4px 8px rgba(230, 0, 0, 0.4);
+}
+
+/*----------------- footer -----------------*/

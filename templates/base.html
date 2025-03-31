@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'global.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'blog/images/favicon.png' %}" >
+        <title>{% block title %}Welcome{% endblock title %}</title>
+        {% block css_files %}
+        {% endblock css_files %} 
+    </head>
+    
+    <body>
+      <!-- main bar -->
+        <div class="main-bar">
+            <div class="picture">
+              <img class="profile-pic"src="{{ coverletter.picture.url }}" alt="Profile Picture"></div>
+            
+                <div class="name">
+                    <a class="name" href="{% url 'homepage' %}">Merlijn Wolters</a>
+                </div>
+              <div class="menu">
+  
+                <button class="about" onclick="toggleContactBox('contactBox2')">Links</button>
+                <div class="contact-box" id="contactBox2">
+                   <div class="socials">
+                    <a href="https://www.instagram.com/teacupsandwindmills/?h" target="_blank"><img class="insta"  src="{% static "blog/images/insta_two.png" %}" alt="Instagram"></a>
+                    <a href="http://www.linkedin.com/in/merlijn-wolters-0b3450140" target="_blank"><img class="linked" src="{% static "blog/images/Linked_two.png" %}" alt="LinkedIn"></a>
+                    <a class="github" href="https://github.com/Fortun3cooki3" target="_blank"><img class="git-img" src="{% static "blog/images/github.png" %}" alt="github"></a>
+                   </div>
+                  </div>
+  
+                <button class="contacts" onclick="toggleContactBox('contactBox3')">Contacts</button>
+                <div class="contact-box" id="contactBox3">
+                  <a class="email_open" href="mailto:merlijnvdmeer@gmail.com" <P>merlijnvdmeer@gmail.com</P></a>
+                </div>
+              </div> 
+            </div>
+        </div>
+        <!-- main content -->
+        {% block body %}
+        
+        {% endblock body %}
+
+        <!-- JavaScript to toggle the contact boxes -->
+
+        <script>
+          function toggleContactBox(boxId) {
+            var contactBox = document.getElementById(boxId);
+            var allBoxes = document.querySelectorAll(".contact-box");
+        
+            
+            var isAlreadyOpen = contactBox.style.display === "block";
+        
+            
+            allBoxes.forEach(box => (box.style.display = "none"));
+        
+            if (!isAlreadyOpen) {
+                
+                contactBox.style.display = "block";
+        
+                
+                document.removeEventListener("click", closePopupOnClickOutside);
+        
+                
+                setTimeout(() => {
+                    document.addEventListener("click", closePopupOnClickOutside);
+                }, 10);
+            }
+        }
+        
+        function closePopupOnClickOutside(event) {
+            var allBoxes = document.querySelectorAll(".contact-box");
+            var allButtons = document.querySelectorAll(".contact-btn");
+        
+            let isClickInsidePopup = [...allBoxes].some(box => box.contains(event.target));
+            let isClickOnButton = [...allButtons].some(button => button.contains(event.target));
+        
+            if (!isClickInsidePopup && !isClickOnButton) {
+                allBoxes.forEach(box => (box.style.display = "none"));
+                document.removeEventListener("click", closePopupOnClickOutside);
+            }
+        }
+      </script>
+        
+    </body>
+</html>

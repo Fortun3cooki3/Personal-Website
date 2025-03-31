@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+body, header, title {
+    font-family: "Outfit", sans-serif;
+}
+
+body{
+    margin: 0;
+    background-color:rgb(245, 245, 245);
+}
+
+.main-bar{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(0, 150, 136);
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 6px 5px rgba(0, 150, 136, 0.4); 
+
+}
+
+.picture{
+    margin-left: 15px;
+    color :rgb(33, 37, 41);
+}
+
+.profile-pic{
+    margin-top: 3px;
+    width: 52px;
+    aspect-ratio: 1/1;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+
+.name{
+    text-decoration: none;
+    margin-left: 15px;
+    width: 200px;
+    flex: 1;
+    color :rgb(33, 37, 41);
+    transition: 0.5s ease;
+}
+
+.name:hover{
+    color: rgba(230, 0, 0, 0.8);
+}
+
+.menu{
+    display:flex;
+    gap: 10px;
+}
+
+
+button:hover{
+    
+    transform: scale(1.2);
+    color: rgba(230, 0, 0, 0.8);
+}
+
+button{
+    border: none;
+    background-color: rgb(20, 150, 136);
+    text-decoration: none;
+    color :rgb(33, 37, 41);
+    padding: 10pxp;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: medium;
+}
+
+.contacts{
+    margin-right: 15px;
+}
+
+.contact-box {
+    display: none;
+    border: solid rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 5px 4px 8px rgba(0, 150, 136, 0.4); 
+    text-align: center;
+    font-size: 16px;
+    color: rgb(33, 37, 41);
+    background: rgb(20, 150, 136);
+    position: absolute;
+    top: 80px;
+    left: 70%;
+    transform: translateX(-50%);
+    justify-content: center;
+    align-items: center;
+}
+    
+
+.email_open{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none ;
+    margin: 5px;
+    transition: 0.5s ease;
+    color: rgb(33,37,41);
+}
+
+.email_open:hover{
+    color: rgba(230, 0, 0, 0.8);
+}
+
+.insta,
+.linked,
+.git-img{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 50px;
+    height: 50px;
+    transition: 0.5s ease;
+    margin: 3px;
+}
+
+
+.insta:hover,
+.linked:hover,
+.git-img:hover{
+    transform: scale(1.2);
+}
